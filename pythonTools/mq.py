@@ -182,7 +182,7 @@ cfg_files = []
 other_files = []
 executable = "./mabe"
 HPCC_parameters = []
-HPCC_LONGJOB = True
+HPCC_LONGJOB = False
 using_conditions = False ## either use VAR/EXCEPT or CONDITIONS, but not both. Use of condition values overrides VAR values.
 
 def hasMatchedSymbols(rawString,sym1,sym2):
@@ -532,8 +532,11 @@ for i in range(len(combinations)):
                 call([executable, "-f"] + cfg_files + ["-p", "GLOBAL-outputPrefix" , conditionDirectoryName + "/" + str(rep).zfill(padSizeReps) + "/" , "GLOBAL-randomSeed" , str(rep)] + params + replacedConstantDefs.split())
         if args.runHPCC or args.indefinite:
             if args.indefinite:
+		#print("long job")
                 HPCC_LONGJOB = True
-            # go to the local directory (after each job is launched, we are in the work directory)
+		
+            
+	    # go to the local directory (after each job is launched, we are in the work directory)
             os.chdir(absLocalDir)
             if (displayName == ""):
                 realDisplayName = "C" + str(i).zfill(padSizeCombinations) + "_" + str(rep).zfill(padSizeReps) + "__" + stripIllegalDirnameChars(conditions[i][1:-1])

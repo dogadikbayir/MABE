@@ -199,8 +199,11 @@ void DefaultArchivist::writeRealTimeFiles(
   }
 
   // write out Max data
+  //
+  std::cout << "WriteMaxFile" << writeMaxFile << std::endl;
+  std::cout << "max_formula:" << max_formula_ << std::endl;
   if (writeMaxFile && max_formula_ != nullptr) {
-
+    std::cout << "I'm in writeMax" << std::endl;
     std::shared_ptr<Organism> best_org;
     auto score = std::numeric_limits<double>::lowest();
     for (auto const &org : population)

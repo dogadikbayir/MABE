@@ -100,7 +100,9 @@ LexicaseOptimizer::LexicaseOptimizer(std::shared_ptr<ParametersTable> PT_)
 	recordOptimizeValues = recordOptimizeValuesPL->get(PT);
 	
 	// leave this undefined so that max.csv is not generated
-	//optimizeFormula = optimizeValueMT;
+	//
+	std::cout << optimizeFormulasMTs[0] << std::endl;
+	optimizeFormula = optimizeFormulasMTs[0];
 
 	popFileColumns.clear();
 	if (recordOptimizeValues){
