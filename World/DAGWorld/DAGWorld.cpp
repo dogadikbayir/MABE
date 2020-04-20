@@ -79,9 +79,9 @@ DAGWorld::DAGWorld(std::shared_ptr<ParametersTable> PT_)
 	int row_counter = 0;
 	string line;
 	size_t len = 0;
-	std::string nw_filename = "./data/" + exp_folder_name + "/nw.csv";
-	std::string ew_filename = "./data/" + exp_folder_name + "/ew.csv";
-	std::string bw_filename = "./data/" + exp_folder_name + "/bw.csv";
+	std::string nw_filename = "../data/" + exp_folder_name + "/nw.csv";
+	std::string ew_filename = "../data/" + exp_folder_name + "/ew.csv";
+	std::string bw_filename = "../data/" + exp_folder_name + "/bw.csv";
         /*
 	std::vector<std::string> filenames = {};
 	int num_tasks = -1;
